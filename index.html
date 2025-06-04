@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <title>Kiosk | Speaker's Age Experiment</title>
+    </head>
+    <body>
+        <div id="page-0">
+            <h1>Want to try guessing for yourself?</h1>
+            <p>Let's see how you compare to the 91 other respondents!</p>
+            <button onclick="toPage(1);">Continue</button>
+        </div>
+        <div id="page-1">
+            <h1>Subject Information</h1>
+            <label for="ethnicity">Are you Ashkenazi Jewish by ancestry?</label><br>
+            <select id="ethnicity">
+                <option value="" disabled selected>Choose one...</option>
+                <option value="ashkenazi">Yes</option>
+                <option value="non-ashkenazi">No</option>
+            </select><br>
+            <button onclick="skipEthnicity();setNum();">Skip</button>
+            <button onclick="validateAnswer(0);">Continue</button>
+        </div>
+        <div id="page-2">
+            <h1>Time to guess!</h1>
+            <p>Hit the blue square when you're ready to listen to the recording.</p>
+            <div id="play-square" onclick="playRecording();"></div>
+            <audio id="recording">Audio not supported.</audio>
+            <div id="age-guess">
+                <label for="guess">Assumed Age</label><br>
+                <select id="guess">
+                    <option value="" disabled selected>Choose one...</option>
+                    <option value="6-11">Child (6-11 years old)</option>
+                    <option value="12-18">Adolescent (12-18 years old)</option>
+                    <option value="19-35">Young Adult (19-35 years old)</option>
+                    <option value="36-64">Middle-Aged (36-64 years old)</option>
+                    <option value="65+">Senior (65+ years old)</option>
+                </select><br>
+                <button onclick="validateAnswer(1)">Continue</button>
+            </div>
+        </div>
+        <div id="page-3">
+            <h1>Your results!</h1>
+            <p id="result"><span id="result-start"></span>! You were <strong><span id="result-status"></span></strong>!</p>
+            <p id="secondary-result"></p>
+            <br>
+            <p>Returning home in <span id="home-countdown">10</span>.</p>
+        </div>
+        <p id="error"></p>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,191 @@
+* {
+    font-family: 'Libre Baskerville', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+h1 {
+    font-size: 60pt;
+}
+
+p {
+    font-size: 26pt;
+}
+
+button, .audio-button {
+    padding: 7.5px 10px;
+    border: 6px solid #003180;
+    border-radius: 0;
+    margin: 10px;
+    color: #003180;
+    font-weight: bold;
+    font-size: 30pt;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.audio-button {
+    width: 36px;
+    margin: 10px auto;
+}
+
+button:hover, .audio-button:hover {
+    color: white;
+    background-color: #003180;
+}
+
+button:focus, .audio-button:focus {
+    color: white;
+    background-color: #003180;
+}
+
+select {
+    padding: 10px;
+    outline: 0.5px solid black;
+    background-color: white;
+    border-radius: 0;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    font-size: 30pt;
+}
+
+label {
+    font-size: 30pt;
+}
+
+select:focus {
+    outline: 1px solid #003180;
+}
+
+::selection {
+    background-color: rgba(0, 49, 128, 0.5);
+}
+
+#email-collection {
+    width: 50vw;
+    max-width: 350px;
+    min-width: 320px;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 0 7.5px;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border 0.2s ease;
+}
+
+#email-collection input {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    width: 75%;
+    font-size: 16px;
+}
+
+#email-collection p {
+    width: 25%;
+}
+
+#content {
+    display: none;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.play-disabled {
+    opacity: 0.5;
+    cursor: default;
+    width: 75px;
+    pointer-events: none;
+}
+
+.disabled:hover {
+    background-color: white;
+    color: #003180;
+}
+
+.play-disabled:hover {
+    background-color: white;
+    color: #003180;
+}
+
+#load-status {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#loading-circle {
+    width: 25px;
+    height: 25px;
+    border: 5px solid black;
+    border-radius: 50%;
+    clip-path: inset(0 0 50% 0);
+    animation: rotateCircle 1s linear infinite;
+    margin: 0 15px;
+}
+
+@keyframes rotateCircle {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#eth-container {
+    display: none;
+}
+
+#error {
+    color: red;
+}
+
+#play-square {
+    width: 100px;
+    height: 100px;
+    padding: 7.5px 10px;
+    border: 6px solid #003180;
+    border-radius: 0;
+    margin: 10px auto;
+    color: #003180;
+    font-weight: bold;
+    font-size: 12pt;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+#play-square:hover {
+    color: white;
+    background-color: #003180;
+}
+
+#play-square:focus {
+    color: white;
+    background-color: #003180;
+}
